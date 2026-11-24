@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102a43" />
+    <title>MediCore | Hospital Management</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <main id="login-screen" class="login-screen">
+      <section class="login-brand">
+        <div class="brand-lockup"><span class="brand-mark">✚</span><span>MediCore</span></div>
+        <div class="brand-copy">
+          <span class="eyebrow">HOSPITAL OPERATIONS PLATFORM</span>
+          <h1>Better care starts with a clearer picture.</h1>
+          <p>One connected workspace for the people and processes behind exceptional care.</p>
+        </div>
+        <div class="login-footnote"><span class="status-dot"></span> Secure workspace · Demo environment</div>
+      </section>
+      <section class="login-panel">
+        <div class="login-content">
+          <div class="mobile-brand brand-lockup"><span class="brand-mark">✚</span><span>MediCore</span></div>
+          <span class="eyebrow">WELCOME BACK</span>
+          <h2>Sign in to MediCore</h2>
+          <p class="muted">Enter your credentials to access your workspace.</p>
+          <form id="login-form" class="login-form">
+            <label>Email address<input name="email" type="email" placeholder="you@medicore.com" required autocomplete="username" /></label>
+            <label>Password<input name="password" type="password" placeholder="Enter your password" required autocomplete="current-password" /></label>
+            <label>Demo role
+              <select name="role" required>
+                <option value="admin">Administrator</option>
+                <option value="doctor">Doctor</option>
+                <option value="patient">Patient</option>
+                <option value="staff">Staff</option>
+              </select>
+            </label>
+            <p id="login-error" class="form-error" aria-live="polite"></p>
+            <button type="submit" class="button button-primary button-wide">Sign in <span>→</span></button>
+          </form>
+          <details class="demo-accounts">
+            <summary>View demo accounts</summary>
+            <div class="demo-grid">
+              <span>Administrator</span><code>admin@medicore.com · admin123</code>
+              <span>Doctor</span><code>doctor@medicore.com · doctor123</code>
+              <span>Patient</span><code>patient@medicore.com · patient123</code>
+              <span>Staff</span><code>staff@medicore.com · staff123</code>
+            </div>
+          </details>
+          <p class="login-disclaimer">Frontend demonstration only. Do not use real patient information.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="app-shell" class="app-shell hidden">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand-lockup sidebar-brand" href="#" aria-label="MediCore home"><span class="brand-mark">✚</span><span>MediCore</span></a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav id="navigation" aria-label="Main navigation"></nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-help"><span class="help-icon">?</span><div><strong>Need help?</strong><small>Contact your system admin</small></div></div>
+          <div class="sidebar-version">MediCore <span>Prototype v1.0</span></div>
+        </div>
+      </aside>
+      <div class="main-area">
+        <header class="topbar">
+          <button id="mobile-menu" class="icon-button mobile-menu" aria-label="Open menu">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="date-label" id="today-label"></span>
+            <button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button>
+            <div class="profile-menu">
+              <div id="profile-avatar" class="avatar">AM</div>
+              <div class="profile-copy"><strong id="profile-name">Alex Morgan</strong><small id="profile-role">Administrator</small></div>
+              <button id="logout-button" class="logout-button" title="Log out" aria-label="Log out">↪</button>
+            </div>
+          </div>
+        </header>
+        <main id="page-content" class="page-content"></main>
+      </div>
+    </div>
+    <div id="modal-root"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
